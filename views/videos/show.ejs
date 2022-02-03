@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/cloudinary-video-player/dist/cld-video-player.light.min.css">
+    <link rel="stylesheet" href="/stylesheets/show.css">
+
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <a href="/logout" class="btn" id='logout'>Logout</a>
+
+    <div class="main">
+        <div class="titleLine">
+            <h1>Watch: <%= send.video.title %>
+            </h1>
+
+            <a href="/videos/dashboard" class="btn b1">Dashboards</a>
+
+            <button id='myBtn' class="btn b1">Download</button>
+
+
+        </div>
+
+        <h4>
+            <%= send.video.description %>
+        </h4>
+        <!-- here -->
+
+        <div class="container">
+            <div class="label">
+                <h5>Share Link</h5>
+            </div>
+            <div class="copy-text">
+                <input type="text" class="text" value='localhost:3000/watch/<%=send.video.id%>' readonly>
+                <button>
+                    <img src="/images/copy.png" alt="vlaid" id='copyImage'>
+                </button>
+            </div>
+        </div>
+
+
+
+
+        <hr>
+        <video id="player" class="cld-video-player cld-fluid" controls playsinline></video>
+
+
+
+    </div>
+
+    <article id="electric-cars" data-columns="3" data-index-number=<%=send.rows %> data-parent="cars"> </article>
+
+    <script type="text/javascript">
+        let copyText = document.querySelector(".copy-text");
+        copyText.querySelector("button").addEventListener("click", function () {
+            let input = copyText.querySelector("input.text");
+            input.select();
+            document.execCommand("copy");
+            copyText.classList.add("active");
+            window.getSelection().removeAllRanges();
+            setTimeout(function () {
+                copyText.classList.remove("active");
+            }, 2500);
+        });
+    </script>
+
+
+    <script src="https://unpkg.com/cloudinary-core/cloudinary-core-shrinkwrap.js"></script>
+    <script src="https://unpkg.com/cloudinary-video-player/dist/cld-video-player.light.min.js"></script>
+
+    <script>
+        var cld = cloudinary.Cloudinary.new({ cloud_name: "demo" });
+        const player = cld.videoPlayer('player', {
+            "fluid": true,
+            playedEventPercents: [95],
+            "controls": true,
+            "fontFace": "Ruda",
+            "skin": "light",
+            "floatingWhenNotVisible": false,
+            "hideContextMenu": false,
+            "logoOnclickUrl": "https://upload.wikimedia.org/wikipedia/commons/2/2c/Speechify_Icon.png",
+            "logoImageUrl": "https://res.cloudinary.com/demo/image/fetch/h_25/https://upload.wikimedia.org/wikipedia/commons/2/2c/Speechify_Icon.png"
+        });
+        player.source("<%= send.video.URL %>", {
+            "info": {
+                "title": "Random Title",
+                "subtitle": "Cool Subtitle"
+            }
+        });
+
+    </script>
+
+
+
+    <script>
+
+        const article = document.querySelector('#electric-cars');
+
+        console.log(article.dataset.indexNumber)
+
+        document.getElementById("myBtn").addEventListener("click", function () {
+            console.log('arrived');
+            const str = article.dataset.indexNumber;
+
+            var nameArr = str.split(',');
+            const newArr = []
+            for (var id in nameArr) {
+                console.log(id)
+                if (id % 2 === 0) {
+                    newArr.push([nameArr[id]])
+                } else {
+                    newArr[(id / 2) - 0.5].push(nameArr[id])
+                }
+            }
+            const rows = newArr
+            let csvContent = "data:text/csv;charset=utf-8,";
+            rows.forEach(function (rowArray) {
+                let row = rowArray.join(",");
+                csvContent += row + "\r\n";
+            });
+
+            var encodedUri = encodeURI(csvContent);
+            var link = document.createElement("a");
+            link.setAttribute("href", encodedUri);
+            link.setAttribute("download", "attendance.csv");
+            document.body.appendChild(link);
+            link.click();
+        });
+    </script>
+</body>
+
+</html>

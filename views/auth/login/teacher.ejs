@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/login.css">
+    <title>Login - Teacher</title>
+</head>
+
+<body>
+    <div class='main'>
+        <h6 id='vidLogo' class='coolColors'> Vidify_</h6>
+        <div id='all'>
+            <form id='formForm' action="./teacher" method="POST">
+                <h1>Login - Teacher</h1>
+                <div id='form0'>
+                    <div class="inputBox0">
+                        <input type="text" name='teacher[username]' id='username' placeholder="Username">
+                    </div>
+                </div>
+                <div id='form2'>
+                    <div class="inputBox2">
+                        <input type="password" name='teacher[password]' id='Password' placeholder="Password">
+                    </div>
+                </div>
+                <button class='btn'>LOG IN</button>
+                <h5>Don't Have an Account Yet? <a href="/auth/register/teacher">Register</a></h5>
+            </form>
+        </div>
+        <img src="/images/camera.jpg" alt="">
+    </div>
+</body>
+
+</html>
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Teacher Login</h1>
+    <form action="./teacher" method="POST">
+        <label for="Username">Username</label>
+        <input type="text" name="teacher[username]" id="Username">
+        <label for="Password">Password</label>
+        <input type="password" name="teacher[password]" id="Password">
+        <button>Submit</button>
+    </form>
+</body>
+
+</html> -->

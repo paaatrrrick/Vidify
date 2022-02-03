@@ -1,0 +1,227 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;700&display=swap');
+
+.main{
+    display: flex;
+    flex-direction: column;
+    margin: 1em 10vh 0 10vh;
+}
+
+h1{
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 4rem;
+    margin-right: .5em;
+
+}
+
+h5{
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 1.5rem;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.titleLine{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+
+.b1{
+    text-align: center;
+    vertical-align: middle;
+    margin: 3em 1em 3em 0;
+}
+
+hr{
+        margin: 1em 0 1em 0;
+        height: .5rem;
+        border-radius: 5px;
+        border: none;
+        background-image: linear-gradient(
+      110deg,
+      hsl(253deg 33% 47%) 0%,
+      hsl(261deg 35% 46%) 6%,
+      hsl(269deg 36% 45%) 12%,
+      hsl(277deg 38% 44%) 18%,
+      hsl(284deg 40% 42%) 23%,
+      hsl(292deg 43% 40%) 29%,
+      hsl(299deg 46% 38%) 35%,
+      hsl(306deg 52% 38%) 41%,
+      hsl(311deg 60% 37%) 47%,
+      hsl(317deg 67% 38%) 53%,
+      hsl(322deg 74% 40%) 59%,
+      hsl(326deg 80% 41%) 65%,
+      hsl(330deg 84% 43%) 71%,
+      hsl(335deg 84% 45%) 76%,
+      hsl(340deg 80% 48%) 82%,
+      hsl(345deg 80% 52%) 88%,
+      hsl(352deg 85% 56%) 94%,
+      hsl(359deg 89% 59%) 100%
+    
+    
+    );
+    
+}
+
+.btn{
+    font-family: 'Source Sans Pro', sans-serif;
+    text-decoration: none;
+    background-color: #5569d4;
+    border-radius: 5px;
+    color: white;
+    padding: 0.3em .8em 0.3em .8em;
+    font-size: 22px;
+    border: none;
+}
+
+h4{
+    font-family: 'Source Sans Pro', sans-serif;
+    margin-top: 0;
+    font-weight: 400;
+    font-size: 2rem;
+    color: #9ca7b3;
+    line-height: 95%;
+}
+
+
+
+#logout{
+    position: absolute;
+    top: 20px;
+    left: 90vw;
+}
+
+
+
+.label {
+    padding:10px;
+    font-size:18px;
+    color:#111;
+}
+
+#copyImage{
+    margin-top: .5em;
+    width: 20px;
+    height: 20px;
+}
+
+.copy-text {
+    position:relative;
+    padding:10px;
+    background:#fff;
+    border:1px solid #ddd;
+    border-radius:10px;
+    display:flex;
+    width: 25vw;
+}
+.copy-text input.text {
+    padding:10px;
+    font-size:18px;
+    color:#555;
+    border:none;
+    outline:none;
+    padding-right:50px;
+    width: 20vw;
+}
+.copy-text button {
+    background:#5569d4;
+    color:#fff;
+    font-size:18px;
+    border:none;
+    outline:none;
+    border-radius:10px;
+    cursor:pointer;
+    display: flex;
+    justify-content: baseline;
+    align-content: flex-start;
+}
+.copy-text button:active {
+    background:#5569d4;
+}
+.copy-text button:before {
+    content:"Copied";
+    position:absolute;
+    top:-45px;
+    right:0px;
+    background:#5569d4;
+    padding:8px 10px;
+    border-radius:20px;
+    font-size:15px;
+    display:none;
+}
+.copy-text button:after {
+    content:"";
+    position:absolute;
+    top:-20px;
+    right:25px;
+    width:10px;
+    height:10px;
+    background:#5569d4;
+    transform:rotate(45deg);
+    display:none;
+}
+.copy-text.active button:before,
+.copy-text.active button:after {
+    display:block;
+}
+
+@media only screen and (max-width: 1100px)  {
+    #logout{
+        position: absolute;
+        top: 20px;
+        left: 85vw;
+    }
+
+    h1{
+        font-size: 2rem;
+    }
+    h4{
+        font-size: 1.5rem;
+    }
+
+    .btn{
+        font-size: 1rem;
+        padding: 0.3em .4em 0.3em .4em;
+    }
+
+    .copy-text {
+        width: 75vw;
+    }
+    .copy-text input.text {
+        width: 70vw;
+    }
+    
+}
+
+
+@media only screen and (max-width: 900px)  {
+
+    .main{
+        display: flex;
+        flex-direction: column;
+        margin: 1em 10vw 0 10vw;
+    }
+
+    #logout{
+        position: absolute;
+        top: 20px;
+        left: 75vw;
+    }
+
+    h1{
+        margin-bottom: 0;
+    }
+
+    h4{
+
+        margin-top: 1em;
+
+    }
+
+
+    .b1{
+        margin: .5em 1em 0 0;
+    }
+
+}

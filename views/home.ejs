@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="stylesheets/home.css">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+
+    <div class="main">
+
+        <h6 id='vidLogo' class='coolColors'> Vidify_</h6>
+        <% if(isLoggedIn==true){%>
+            <a href="/logout" id='logout' class='btn'>Logout</a>
+            <% } else { %>
+                <a href="/auth/login/teacher" id='login' class='btn'>Login</a>
+                <a href="/auth/register/teacher" id='register' class='btn'>Register</a>
+                <% } %>
+
+
+                    <div class='main-section'>
+                        <div class="main-text">
+                            <div class="h1s">
+                                <h1>Upload.&#160</h1>
+                                <h1>Share.&#160</h1>
+                                <h1>Track.&#160</h1>
+                            </div>
+
+                            <h5>
+                                All at the tips of your fingers for Free with Vidify
+                            </h5>
+                        </div>
+                        <img src="/images/lotsOfPeople.jpg" alt="lady" id='ladyimg'>
+                    </div>
+
+                    <div class="allVidMagic">
+
+                        <div class="vidMagic">
+                            <h2>Watch the <span class='coolColors'>Vidify Magic In Action </span>
+                                with Only 4 Short Steps.</h2>
+                            <p id='vidPara'>Easily be able to track attendence on which students watch your videos.</p>
+                        </div>
+                        <div class="vidMagic2">
+                            <div class="d1"></div>
+                            <div class="d2"></div>
+                            <div class="d3"></div>
+                            <div class="vidMagic2Left">
+                                <div class="c1">
+                                    <div class="card">
+                                        <div class="content">
+                                            <h2>01</h2>
+                                            <h3>Upload</h3>
+                                            <p>First take any MP4 or MOV file from your computer and upload it to your
+                                                account. Make
+                                                sure to give it a title and description.</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="card">
+                                    <div class="content">
+                                        <h2>03</h2>
+                                        <h3>Watch</h3>
+                                        <p>Most importantly, each of your students will be able to seemlessly
+                                            watch you educational content from the given link.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="vidMagic2Right">
+                                <div class="card">
+                                    <div class="content">
+                                        <h2>02</h2>
+                                        <h3>Share</h3>
+                                        <p>Each uploaded video in your dashboard comes equipt with a share link. Paste
+                                            this link in
+                                            Blackboard, Canva, or anywhere that you communicate with your students.</p>
+                                    </div>
+                                </div>
+                                <div class="c4">
+                                    <div class="card">
+                                        <div class="content">
+                                            <h2>04</h2>
+                                            <h3>Track</h3>
+                                            <p>After your students begin watching your video, a downloadable file
+                                                containing their
+                                                names and emails will populate for you to take attendence. </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class='bottomSection'>
+                        <img src="/images/OneGuy.jpg" alt="oneGuy" id='oneGuy'>
+                        <div class="bottomText">
+                            <h1>
+                                And that's it.
+                            </h1>
+                            <h5>
+                                Now go Get Back to Teaching.
+                            </h5>
+                        </div>
+                    </div>
+
+                    <div class="sources">
+                        <a href="/videos/about">Resources</a>
+                    </div>
+
+
+
+
+                    <script type="text/javascript" src="script/vanilla-tilt.js"></script>
+                    <script>
+                        VanillaTilt.init(document.querySelectorAll(".card"), {
+                            max: 25,
+                            speed: 400,
+                            glare: true,
+                            "max-glare": 1
+                        });
+                    </script>
+
+    </div>
+
+
+
+
+
+
+</body>
+
+</html>

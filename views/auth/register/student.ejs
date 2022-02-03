@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/register.css">
+    <title>Register - Student</title>
+</head>
+
+<body>
+
+    <div class='main'>
+        <h6 id='vidLogo' class='coolColors'> Vidify_</h6>
+        <div id='all'>
+            <form id='formForm' action="./student" method="POST">
+                <h1>Register - Student</h1>
+                <div id='form0'>
+                    <div class="inputBox0">
+                        <input type="text" name='student[username]' id='username' placeholder="Username"
+                            onkeydown="validation3()">
+                        <span id='text0' class='bottomSpan'></span>
+                    </div>
+                </div>
+                <div id='form1'>
+                    <div class="inputBox1">
+                        <input type="text" name='student[email]' id='email' placeholder="Email"
+                            onkeydown="validation()">
+                        <span id='text1' class='bottomSpan'></span>
+                    </div>
+                </div>
+                <div id='form2'>
+                    <div class="inputBox2">
+                        <input type="password" name='student[password]' id='password' placeholder="Password"
+                            onkeydown="validation2()">
+                        <span id='text2' class='bottomSpan'></span>
+                    </div>
+                </div>
+                <button class='btn'>CREATE AN ACCOUNT</button>
+                <h5>Do you have an Account? <a href="/auth/login/student">Log in</a></h5>
+            </form>
+        </div>
+
+        <img src="/images/camera.jpg" alt="">
+
+    </div>
+    <script type="text/javascript">
+        function validation3() {
+            var username = document.getElementById("username");
+            var usernameVal = username.value;
+            if (usernameVal == "" | usernameVal == " ") {
+                username.classList.add('invalid')
+                username.classList.remove('valid')
+            } else {
+                username.classList.add('valid')
+                username.classList.remove('invalid')
+                stateHandle()
+            }
+        }
+
+        function validation() {
+            var form = document.getElementById('form1');
+            var email = document.getElementById("email").value;
+            var text = document.getElementById("text1");
+            var pattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+
+            if (email.match(pattern)) {
+                form.classList.add("valid");
+                form.classList.remove("invalid");
+                text.innerHTML = "Looks Good!";
+                text.style.color = "#00A86B"
+                stateHandle()
+
+            }
+            else {
+                form.classList.add("invalid");
+                form.classList.remove("valid");
+                text.innerHTML = "Please Enter Valid Email";
+                text.style.color = "#CD5C5C"
+            }
+
+            if (email == "") {
+                form.classList.remove("valid");
+                form.classList.remove("invalid");
+                text.innerHTML = "";
+                text.style.color = "#00A86B"
+            }
+
+        }
+
+        function validation2() {
+            var form = document.getElementById('form2');
+            var password = document.getElementById("password").value;
+            var text = document.getElementById("text2");
+            var pattern = /^[A-Za-z]\w{7,14}$/;
+
+            if (password.match(pattern)) {
+                form.classList.add("valid");
+                form.classList.remove("invalid");
+                text.innerHTML = "Looks Good!";
+                text.style.color = "#00A86B"
+                stateHandle()
+            }
+            else {
+                form.classList.add("invalid");
+                form.classList.remove("valid");
+                text.innerHTML = "Please Enter Valid Password";
+                text.style.color = "#CD5C5C"
+            }
+
+            if (password == "") {
+                form.classList.remove("valid");
+                form.classList.remove("invalid");
+                text.innerHTML = "";
+                text.style.color = "#00A86B"
+            }
+
+        }
+
+        let button = document.querySelector(".btn");
+        // button.disabled = true;
+        console.log('yo yo yo')
+        // input.addEventListener("change", stateHandle);
+        function stateHandle() {
+            console.log('here')
+            var form2 = document.getElementById('form2');
+            var form1 = document.getElementById('form1');
+            var username = document.getElementById("username");
+            // console.log(form2.classList)
+            // console.log(form1.classList)
+            // console.log(username.classList)
+            if (form2.classList.contains('valid') && form1.classList.contains('valid') && username.classList.contains('valid')) {
+                console.log('arrived')
+                button.disabled = false;
+            } else {
+                button.disabled = true;
+            }
+        }
+    </script>
+</body>
+
+</html>

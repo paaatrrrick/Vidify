@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/dashboard.css">
+    <title>Dashboard</title>
+</head>
+
+<body>
+    <div class="mai">
+        <div class="nav">
+            <a href="/logout" id='logout' class='btn'>Logout</a>
+        </div>
+
+        <div class="top">
+            <h1>Hello, <span class='coolColors'>
+                    <%= name %>
+                </span>
+            </h1>
+            <form action="/videos/new">
+                <button class='btn'>New Video</button>
+            </form>
+        </div>
+
+        <% if(videos.length==0) {%>
+
+            <div class="theLot">
+                <h3>Click New Video to Get Started</h2>
+                    <hr>
+            </div>
+
+            <% } %>
+
+                <% for (id in videos) {%>
+                    <div class='theLot'>
+                        <div class='theLotMinusHR'>
+                            <div class="img">
+                                <img src="<%= videos[id].URL %>" alt="Image">
+                            </div>
+
+                            <div class="lotText">
+                                <h2>
+                                    <%= videos[id].title %>
+                                </h2>
+                                <p>
+                                    <%= videos[id].description %>
+                                </p>
+                                <form action='/videos/<%= videos[id].ID%>'>
+                                    <button class='btn'>View</button>
+                                </form>
+                            </div>
+                        </div>
+                        <hr>
+                    </div>
+                    <% } %>
+    </div>
+
+</body>
+
+</html>

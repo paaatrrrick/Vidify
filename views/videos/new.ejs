@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/new.css">
+    <title>New Video</title>
+
+</head>
+
+<body>
+
+    <a href="/logout" id="logout">Logout</a>
+    <h6 id='vidLogo' class='coolColors'> Vidify_</h6>
+    <div class="all">
+        <form action="/videos" method="POST" novalidate class="validated-form" enctype="multipart/form-data">
+            <h1 class="text-center">New Video</h1>
+            <div class="title col">
+                <label class="form-label" for="title">Title:</label>
+                <input class="form-control" type="text" id="title" name="video[title]" required
+                    placeholder="Your Cool Title">
+            </div>
+
+            <div class="description col">
+                <label class="form-label" for="description">Description:</label>
+                <textarea class="form-control" type="text" id="description" placeholder="An Explanation of the Video"
+                    name="video[description]" required></textarea>
+            </div>
+            <div class="container">
+                <input type="file" class="form-file-input upload-box" id="image" name="image" multiple
+                    placeholder="Upload Video" required>
+            </div>
+            <button class="btn">UPLOAD VIDEO</button>
+        </form>
+    </div>
+</body>
+
+</html>
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/new.css">
+    <title>New Video</title>
+
+</head>
+
+<body>
+
+    <a href="/logout" id="logout">Logout</a>
+    <h6 id='vidLogo' class='coolColors'> Vidify_</h6>
+    <div class="all">
+        <div class="main">
+            <h1 class="text-center">New Video</h1>
+            <form action="/videos" method="POST" novalidate class="validated-form" enctype="multipart/form-data">
+                <div class="title col">
+                    <label class="form-label" for="title">Title:</label>
+                    <input class="form-control" type="text" id="title" name="video[title]" required
+                        placeholder="Your Cool Title">
+                </div>
+
+                <div class="description col">
+                    <label class="form-label" for="description">Description:</label>
+                    <textarea class="form-control" type="text" id="description"
+                        placeholder="An Explanation of the Video" name="video[description]" required></textarea>
+                </div>
+                <input type="file" class="form-file-input" id="image" name="image" multiple placeholder="Upload Video"
+                    required>
+
+                <button class="btn">UPLOAD VIDEO
+                </button>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html> -->

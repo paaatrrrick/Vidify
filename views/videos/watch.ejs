@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/cloudinary-video-player/dist/cld-video-player.light.min.css">
+    <link rel="stylesheet" href="/stylesheets/watch.css">
+
+    <title>Document</title>
+</head>
+
+<body>
+
+    <a href="/logout" class='btn' id='logout'>Logout</a>
+
+    <div class='main'>
+
+
+
+        <h1>Watch: <%= video.title %>
+        </h1>
+        <h4>
+            <%= video.description %>
+        </h4>
+
+        <hr>
+
+        <video id="player" class="cld-video-player cld-fluid" controls playsinline></video>
+    </div>
+
+
+
+
+
+    <script src="https://unpkg.com/cloudinary-core/cloudinary-core-shrinkwrap.js"></script>
+    <script src="https://unpkg.com/cloudinary-video-player/dist/cld-video-player.light.min.js"></script>
+
+    <script>
+        var cld = cloudinary.Cloudinary.new({ cloud_name: "demo" });
+
+        const player = cld.videoPlayer('player', {
+            "fluid": true,
+            playedEventPercents: [95],
+            "controls": true,
+            "fontFace": "Ruda",
+            "skin": "light",
+            "floatingWhenNotVisible": false,
+            "hideContextMenu": false,
+            "logoOnclickUrl": "https://upload.wikimedia.org/wikipedia/commons/2/2c/Speechify_Icon.png",
+            "logoImageUrl": "https://res.cloudinary.com/demo/image/fetch/h_25/https://upload.wikimedia.org/wikipedia/commons/2/2c/Speechify_Icon.png"
+        });
+
+        player.source("<%= video.URL %>", {
+            "info": {
+                "title": "Random Title",
+                "subtitle": "Cool Subtitle"
+            }
+        });
+
+        player.on('percentsplayed', (event) => {
+            //console.log(event.eventData.percent + " percents played")
+
+            const data = {
+                vidId: '<%= video._id %>'
+            };
+
+            fetch('/vidWatch', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(data),
+            })
+        })
+    </script>
+
+
+</body>
+
+</html>

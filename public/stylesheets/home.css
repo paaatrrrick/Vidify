@@ -1,0 +1,405 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;700&display=swap');
+
+
+
+.main{
+    display: flex;
+    flex-direction: column;
+}
+#vidLogo{
+    position: absolute;
+    top: 20px;
+    left: 5vw;
+    font-size: 4rem;
+}
+
+
+.coolColors{
+    background-image: -webkit-gradient(linear,left top,right top,from(#6351a1),color-stop(53%,#9a227f),to(#f33a3e));
+    background-image: linear-gradient(
+90deg,#6351a1,#9a227f 53%,#f33a3e);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+
+#login{
+    position: absolute;
+    top: 45px;
+    left: 82vw;
+    margin-right: 10px;
+}
+
+#register{
+    text-decoration: none;
+    position: absolute;
+    top: 45px;
+    left: 90vw;
+}
+
+#logout{
+    position: absolute;
+    top: 45px;
+    left: 90vw;
+}
+
+.btn{
+    font-family: 'Source Sans Pro', sans-serif;
+    text-decoration: none;
+    background-color: #5569d4;
+    border-radius: 5px;
+    color: white;
+    padding: 0.3em .8em 0.3em .8em;
+    font-size: 22px;
+    text-align: center;
+}
+
+
+
+.main-section{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 10rem 5vw 8em 5vw;
+}
+
+h1{
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 6rem;
+    line-height: 95%;
+}
+
+
+.main-text{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+.main-text h5{
+    font-weight: 400;
+    font-size: 3.5rem;
+    color: #9ca7b3;
+    max-width: 400px;
+    line-height: 95%;
+    margin-top: 2rem;
+    
+}
+
+
+#ladyimg{    
+    width: 60vw;
+    height: 37vw;
+    min-width: 300px;
+    min-height: 200px;
+}
+
+
+
+
+
+
+.allVidMagic{
+    background-color: #212529;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100vw;
+}
+
+.vidMagic{
+    font-size: 3rem;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    padding: 1em 5vw 0 5vw;
+    background-color: #212529;
+    /* width: 100vw; */
+}
+
+.vidMagic2{
+    background-color: #212529;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 1em 0 1em 0;
+}
+
+.vidMagic2Right{
+    padding-top: 15em;
+    padding-left: 2em;
+
+}
+.vidMagic2Left{
+    padding-right: 2em;
+
+}
+.c1{
+    padding-bottom: 4em;
+}
+.c4{
+    padding-top: 4em;
+}
+
+#vidPara{
+    font-weight: 400;
+    font-size: 3rem;
+    color: #9ca7b3;
+    padding-top: 1em;
+}
+
+
+
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+
+.d1
+    {
+        content: ' ';
+        position: absolute;
+        top: 920px;
+        left: -20vw;
+        width: 70vw;
+        height: 70vw;
+        background: linear-gradient(
+            45deg,#6351a1,#9a227f,#f33a3e);
+        clip-path: circle(20%);
+    } 
+
+.d2
+{
+    content: ' ';
+    position: absolute;
+    top: 1750px;
+    left: 70vw;
+    width: 30vw;
+    height: 30vw;
+    background: linear-gradient(
+        45deg,#6351a1,#f33a3e);
+    clip-path: circle(20%);
+}  
+ 
+
+
+
+.vidMagic2 .card{
+
+    width: 35vw;
+    height: 22.5vw;
+    min-width: 300px;
+    min-height: 200px;
+    margin: 30px;
+    box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5);
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.5);
+    border-left: 1px solid rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(5px);
+}
+
+.vidMagic2 .card .content{
+    padding: 20px;
+    text-align: center;
+    transform: translateY(100px);
+    opacity: 0;
+    transition: 0.5s
+}
+
+.vidMagic2 .card:hover .content{
+    transform: translateY(0px);
+    opacity: 1;
+}
+
+.vidMagic2 .card .content h2{
+    position: absolute;
+    top: -40px;
+    right: 30px;
+    font-size: 10rem;
+    color: rgba(255, 255, 255, 0.05);
+    pointer-events: none;
+}
+
+.vidMagic2 .card .content h3{
+
+    font-size: 3rem;
+    color: #fff;
+    z-index: 1;
+
+}
+.vidMagic2 .card .content p{
+    font-size:2rem;
+    color: #fff;
+    font-weight: 400;
+
+} 
+
+.bottomSection{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin: 4rem 3rem 8rem 3rem;
+}
+
+.bottomText{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+#oneGuy{
+    width: 45vw;
+    height: 45vw;
+    min-width: 350px;
+    min-height: 350px;
+}
+
+.bottomText h5{
+    font-weight: 400;
+    font-size: 3em;
+    color: #9ca7b3;
+}
+
+
+.sources{
+    background-color: #212529;
+    display: flex;
+    justify-content: center;
+}
+
+.sources a{
+    text-decoration: none;
+    border-radius: 5px;
+    color: white;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+
+@media only screen and (max-width: 1350px)  {
+    .d1{
+        display: none;
+
+    }
+    .d2{
+        display: none;
+
+    }
+
+    #login{
+        left: 75vw;
+    }
+
+    #register{
+        left: 85vw;
+    }
+    #logout{
+        left: 85vw;
+    }
+
+    #vidLogo{
+        font-size: 3rem;
+        top: 30px;
+    }
+
+    .btn{
+        font-size: 1rem;
+    }
+
+    .h1s{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    h1{
+        font-size: 3rem;
+    }
+
+    .main-section{
+        margin-bottom: 0px;
+        padding-bottom: 2rem;
+    }
+
+    #ladyimg{
+        margin-top: 2rem;
+    }
+
+    .main-text h5{
+        font-weight: 400;
+        font-size: 1.5rem;
+        color: #9ca7b3;
+        max-width: 90vw;
+        line-height: 95%;
+        margin-top: 2rem;
+        
+    }
+
+    .vidMagic h2{
+        font-size: 2.5rem;
+    }
+
+    #vidPara{
+        font-size: 1.5rem;
+    }
+
+    .vidMagic2Right{
+        padding-top: 3em;    
+    }
+
+    .vidMagic2Right{
+        padding-left: 0em;
+    
+    }
+    .vidMagic2Left{
+        padding-right: 0em;
+    
+    }
+
+    .vidMagic2 .card .content h2{
+        font-size: 4rem;
+        top: -20px;
+
+    }
+    
+    .vidMagic2 .card .content h3{
+    
+        font-size: 1.75rem;
+    
+    }
+    .vidMagic2 .card .content p{
+        font-size: 1rem;
+    } 
+}
+
+
+@media only screen and (max-width: 900px)  {
+
+    #login{
+        left: 55vw;
+    }
+
+    #register{
+        left: 76vw;
+    }
+
+    #logout{
+        left: 76vw;
+    }
+
+}
